@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar/Navbar';
 import {useEffect} from "react";
+import Hero from "../components/Hero/Hero";
 
 const Home = () => {
 
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <>
             <Navbar/>
+            <Hero />
         </>
     );
 }

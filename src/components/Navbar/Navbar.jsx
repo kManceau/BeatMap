@@ -7,7 +7,7 @@ import Nav from "./Nav/Nav.";
 
 
 export default function AppBarComponent() {
-    const navLinks = [['Accueil', '/'], ['Artistes', '/artists'], ['Evénements', '/events']];
+    const navLinks = [['Accueil', '/'], ['Carte', '/map'], ['Artistes', '/artists'], ['Evénements', '/events']];
     const profilLinks = [];
     const token = localStorage.getItem("token");
     if(token){
@@ -29,7 +29,6 @@ export default function AppBarComponent() {
                     </Container>
                 </Toolbar>
             </AppBar>
-            <Toolbar/>
         </>
     );
 }
