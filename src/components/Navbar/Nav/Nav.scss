@@ -1,0 +1,23 @@
+.profile-icon-container{
+  border-radius: .5rem;
+}
+.profile-icon-container:hover{
+  background-color: transparent !important;
+  cursor: pointer !important;
+  .profile-icon{
+    transform: scale(2);
+  }
+}
+.profile-icon{
+  color: black !important;
+  min-width: auto !important;
+}
+
+.profile-menu .MuiPaper-root{
+  background-color: black !important;
+  color: #F9A602;
+  .MuiButtonBase-root:hover{
+    background-color: #F9A602 !important;
+    color: black !important;
+  }
+}
