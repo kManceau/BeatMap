@@ -2,7 +2,11 @@
   width: 100vw;
   min-height: calc(100vh - 4rem);
   display: flex;
-  background-image: url('../../assets/images/hero-background.png');
+  background-image: image-set(
+    url('../../assets/images/hero-background.avif') 1x,
+    url('../../assets/images/hero-background.webp') 1x,
+    url('../../assets/images/hero-background.jpg') 1x
+  );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -24,7 +28,7 @@
   gap: 2rem;
   padding: 2rem;
   border-radius: 1rem;
-  background-color: #00000099;
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
 }
 .hero-logo{
