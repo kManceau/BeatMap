@@ -14,11 +14,15 @@ const Hero = () => {
                         <source srcSet={logoWebp} type="image/webp"/>
                         <img src={logoPng} alt="BeatMap Logo" className="hero-logo"/>
                     </Box>
-                    <Typography>
+                    <Typography variant="h6">
                         BeatMap vous permets de recenser les concerts et festivals autour de vous !
                     </Typography>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus excepturi id necessitatibus obcaecati reiciendis rem repudiandae. Cumque omnis pariatur sit! Accusantium adipisci aspernatur dicta, dignissimos earum ex iste molestiae quibusdam rem? Aliquam asperiores at deleniti iure possimus quae veniam! Consequatur delectus dignissimos dolor doloribus dolorum excepturi natus saepe totam voluptatibus.
+                        Que vous soyez un mélomane passionné ou simplement en quête d’une sortie musicale, BeatMap est l’outil parfait pour découvrir les concerts et festivals autour de vous et partout dans le monde.
+                    <br />
+                        Grâce à son interface intuitive et sa carte interactive, BeatMap vous permet de visualiser en un coup d'œil tous les événements musicaux à venir. Plus besoin de fouiller des dizaines de sites pour trouver le concert parfait : tout est centralisé au même endroit !
+                    <br />
+                        Que vous soyez amateur de rock, d’électro, de jazz ou de musique classique, BeatMap est votre compagnon idéal pour planifier vos sorties musicales et découvrir de nouveaux artistes. Explorez, vibrez et laissez la musique vous guider !
                     </Typography>
                     <Button variant="contained" href="#explore" size="large">
                         Parcourir notre carte
