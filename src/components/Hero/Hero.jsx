@@ -14,7 +14,7 @@ const Hero = () => {
                         <source srcSet={logoWebp} type="image/webp"/>
                         <img src={logoPng} alt="BeatMap Logo" className="hero-logo"/>
                     </Box>
-                    <Typography variant="h6">
+                    <Typography component="h1" variant="h6">
                         BeatMap vous permets de recenser les concerts et festivals autour de vous !
                     </Typography>
                     <Typography>

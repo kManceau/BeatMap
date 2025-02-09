@@ -40,6 +40,6 @@ const Nav = ({navLinks, profilLinks, user}) => {
                 </Menu>
             </List>
         </Box>
-    );
+    )
 }
 export default Nav;

@@ -16,7 +16,7 @@ const LogoTitle = () => {
                 </Box>
             </Link>
             <Typography component={Link} to="/" variant="h4"
-                        sx={{textDecoration: "none", fontFamily: "MoveOnly", fontWeight: 900, color: "text.primary"}}>
+                        sx={{textDecoration: "none", fontFamily: "MoveOnly", fontWeight: 900, color: "black"}}>
                 Beat Map
             </Typography>
         </Box>

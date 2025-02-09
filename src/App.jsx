@@ -1,6 +1,9 @@
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import {BrowserRouter, Route, Routes} from "react-router";
 import Home from "./pages/Home";
+import {createContext} from "react";
+
+export const imagesBaseUrl = createContext(process.env.REACT_APP_IMAGES_BASE_URL);
 
 function App() {
     const theme = createTheme({
@@ -13,6 +16,8 @@ function App() {
                 main: '#db5b20',
             },
             text:{
+                primary: '#FFFFFF',
+                secondary: '#c1c1c1',
                 defaut: '#000000',
             },
             background: {
