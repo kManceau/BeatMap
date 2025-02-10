@@ -3,7 +3,18 @@ import {BrowserRouter, Route, Routes} from "react-router";
 import Home from "./pages/Home";
 import {createContext} from "react";
 
+
+const token = localStorage.getItem("token");
+let profil = [];
+if(token){
+    profil = [['Mon profil', '/profil'], ['Se déconnecter', '/logout']];
+} else {
+    profil = [['Se connecter', '/login'], ['S\'inscrire', '/register']];
+}
+
 export const imagesBaseUrl = createContext(process.env.REACT_APP_IMAGES_BASE_URL);
+export const NavLinks = createContext([['Accueil', '/'], ['Carte', '/map'], ['Artistes', '/artists'], ['Evénements', '/events']]);
+export const ProfilLinks = createContext(profil);
 
 function App() {
     const theme = createTheme({

@@ -1,14 +1,15 @@
+import "./EventCard.scss";
 import {Button, Card, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
 import {useContext} from "react";
 import {imagesBaseUrl} from "../../../App";
 
-const SoonCard = ({event}) => {
+const EventCard = ({event}) => {
     const ImagesBaseUrl = useContext(imagesBaseUrl);
     const startDate = new Intl.DateTimeFormat('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(event.start_date));
     const endDate = new Intl.DateTimeFormat('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(event.end_date));
 
     return (
-        <Card sx={{minWidth: 345, maxWidth: 345, backgroundColor: "background.default", display: "flex", flexDirection: "column", boxShadow: "5px 5px 10px 0px rgba(0,0,0,.5)", marginBlockEnd: "1rem"}}>
+        <Card sx={{minWidth: 340, maxWidth: 340, backgroundColor: "background.default", display: "flex", flexDirection: "column", boxShadow: "5px 5px 10px 0px rgba(0,0,0,.5)", marginBlockEnd: "1rem"}}>
             <CardMedia component="picture" sx={{objectFit: "cover"}}>
                 <source srcSet={`${ImagesBaseUrl}event/${event.photo}.avif`} type="image/avif"/>
                 <source srcSet={`${ImagesBaseUrl}event/${event.photo}.webp`} type="image/webp"/>
@@ -41,4 +42,4 @@ const SoonCard = ({event}) => {
         </Card>
     )
 }
-export default SoonCard;
+export default EventCard;

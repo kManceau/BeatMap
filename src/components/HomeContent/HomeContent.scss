@@ -1,16 +1,16 @@
-.home-soon-background {
+.home-content-background {
   width: 100vw;
   background-color: #333333;
 }
-.home-soon-container {
+.home-content-container {
   display: grid;
   min-height: 100%;
   padding-block-start: 2rem;
 }
-.home-soon-title{
+.home-content-title{
   color: #F9A602;
 }
-.home-soon-cards-container{
+.home-content-cards-container{
   display: flex;
   overflow-x: scroll;
   gap: 2rem;

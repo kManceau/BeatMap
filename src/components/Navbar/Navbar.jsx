@@ -4,19 +4,12 @@ import {Container, Toolbar} from "@mui/material";
 import LogoTitle from "./LogoTitle/LogoTitle";
 import BurgerMenu from "./BugerMenu/BurgerMenu";
 import Nav from "./Nav/Nav.";
+import {useContext} from "react";
+import {NavLinks, ProfilLinks} from "../../App";
 
-
-export default function AppBarComponent() {
-    const navLinks = [['Accueil', '/'], ['Carte', '/map'], ['Artistes', '/artists'], ['Evénements', '/events']];
-    const profilLinks = [];
-    const token = localStorage.getItem("token");
-    if(token){
-        profilLinks.push(['Mon profil', '/profil']);
-        profilLinks.push(['Se déconnecter', '/logout']);
-    } else {
-        profilLinks.push(['Se connecter', '/login']);
-        profilLinks.push(['S\'inscrire', '/register']);
-    }
+export default function AppBaNComponent() {
+    const navLinks = useContext(NavLinks);
+    const profilLinks = useContext(ProfilLinks);
 
     return (
         <>

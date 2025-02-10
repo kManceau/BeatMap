@@ -1,9 +1,10 @@
 import Navbar from '../components/Navbar/Navbar';
 import {useEffect, useState} from "react";
 import Hero from "../components/Hero/Hero";
-import HomeSoon from "../components/HomeSoon/HomeSoon";
+import HomeContent from "../components/HomeContent/HomeContent";
 import HomePicture from "../components/HomePicture/HomePicture";
 import {Box, CircularProgress} from "@mui/material";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
     const [loader, setLoader] = useState(true);
@@ -30,9 +31,11 @@ const Home = () => {
                 ) : (
                     <>
                         <Hero/>
-                        <HomeSoon/>
+                        <HomeContent type="events"/>
                         <HomePicture number="1" />
+                        <HomeContent type="artists"/>
                         <HomePicture number="2" />
+                        <Footer />
                     </>
                 )
             }
