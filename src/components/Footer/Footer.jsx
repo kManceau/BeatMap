@@ -12,7 +12,7 @@ const Footer = () => {
     const profilLinks = useContext(ProfilLinks);
 
     return (
-        <Box sx={{backgroundColor: "black", paddingBlock: "2rem"}}>
+        <Box sx={{backgroundColor: "#333333", paddingBlock: "2rem"}}>
             <Container maxWidth="xl" className="footer-container">
                 <Typography variant="h3" sx={{color: "primary.main"}}>
                     BeatMap

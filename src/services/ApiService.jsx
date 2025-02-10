@@ -9,3 +9,7 @@ export const apiGetSoonEvents = async (limit) => {
 export const apiGetPopularArtists = async (limit) => {
     return await axios.get(API_BASE_URL + "artists/popular?limit=" + limit).then((response) => response.data);
 }
+
+export const apiGetCityName = async (latitude, longitude) => {
+    return await axios.get("https://api-adresse.data.gouv.fr/reverse/?lat=" + latitude + "" + "&lon=" + longitude).then((response) => response.data);
+}

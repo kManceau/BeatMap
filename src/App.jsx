@@ -2,6 +2,7 @@ import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import {BrowserRouter, Route, Routes} from "react-router";
 import Home from "./pages/Home";
 import {createContext} from "react";
+import Map from "./pages/Map";
 
 
 const token = localStorage.getItem("token");
@@ -46,6 +47,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/map" element={<Map />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
