@@ -38,16 +38,16 @@ const Footer = () => {
                         ))}
                     </List>
                     <Box className="footer-links social-links">
-                        <Button size="small" className="footer-button">
+                        <Button href="https://github.com/kManceau" target="_blank" size="small" className="footer-button">
                             <GitHubIcon/>
                         </Button>
-                        <Button size="small" className="footer-button">
+                        <Button href="mailto:kevin.manceau@gmail.com" size="small" className="footer-button">
                             <AlternateEmailIcon />
                         </Button>
-                        <Button size="small" className="footer-button">
+                        <Button href="https://www.linkedin.com/in/kevin-manceau/" target="_blank" size="small" className="footer-button">
                             <LinkedInIcon />
                         </Button>
-                        <Button size="small" className="footer-button">
+                        <Button href="https://beatmap.kmanceau.fr" target="_blank" size="small" className="footer-button">
                             <PublicIcon />
                         </Button>
                     </Box>
