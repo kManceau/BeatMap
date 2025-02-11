@@ -5,6 +5,7 @@ import Footer from "../components/Footer/Footer";
 import {apiGetCityName} from "../services/ApiService";
 import MyMap from "../components/MyMap/MyMap";
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
+import SkipLinks from "../components/SkipLinks/SkipLinks";
 
 const Map = () => {
     const [loader, setLoader] = useState(true);
@@ -54,6 +55,7 @@ const Map = () => {
 
     return (
         <>
+            <SkipLinks links={[['Aller à la carte', '#map'], ['Aller en bas de page', '#footer']]} />
             <Navbar/>
             <Breadcrumb links={[['Accueil', '/'], ['Carte', '/map']]}/>
             {

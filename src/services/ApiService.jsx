@@ -17,3 +17,11 @@ export const apiGetCityName = async (latitude, longitude) => {
 export const apiGetAllEvents = async () => {
     return await axios.get(API_BASE_URL + "events").then((response) => response.data);
 }
+
+export const apiGetArtistsPaginated = async (page) => {
+    return await axios.get(API_BASE_URL + "artists/paginated?page=" + page).then((response) => response.data);
+}
+
+export const apiGetEventsPaginated = async (page) => {
+    return await axios.get(API_BASE_URL + "events/paginated?page=" + page).then((response) => response.data);
+}

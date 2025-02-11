@@ -16,7 +16,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const BurgerMenu = ({navLinks, profilLinks, user}) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(+false);
     const [search, setSearch] = useState("");
 
     const toggleDrawer = (state) => () => {
@@ -26,13 +26,13 @@ const BurgerMenu = ({navLinks, profilLinks, user}) => {
 
     return (
         <Box sx={{display: {xs: "flex", md: 'none'},}}>
-            <IconButton onClick={toggleDrawer(true)}>
+            <IconButton onClick={toggleDrawer(+true)}>
                 <MenuIcon/>
             </IconButton>
 
-            <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}
+            <Drawer anchor="left" open={+open} onClose={toggleDrawer(+false)}
                     sx={{'& .MuiDrawer-paper': {width: '100%', backgroundColor: 'background.burgerMenu'}}}>
-                <IconButton onClick={toggleDrawer(false)} style={{alignSelf: "flex-end", margin: 8}}>
+                <IconButton onClick={toggleDrawer(+false)} style={{alignSelf: "flex-end", margin: 8}}>
                     <CloseIcon sx={{color: "primary.main"}}/>
                 </IconButton>
                 <List>
@@ -71,7 +71,6 @@ const BurgerMenu = ({navLinks, profilLinks, user}) => {
                             sx={{ color: "primary.main", "& fieldset": {borderColor: "primary.main"}}}
                             endAdornment={
                                 <InputAdornment position="end">
-{/*<IconButton onClick="">*/}
                                     <IconButton>
                                         <SearchIcon sx={{color: "primary.main"}}/>
                                     </IconButton>

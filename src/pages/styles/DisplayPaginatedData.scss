@@ -1,0 +1,14 @@
+.paginated-data-container{
+  margin-block: 1rem;
+  padding-block: 1rem;
+  display: flex;
+  overflow-x: scroll;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 900px){
+  .paginated-data-container {
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+}

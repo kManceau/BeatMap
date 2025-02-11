@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router";
 import Home from "./pages/Home";
 import {createContext} from "react";
 import Map from "./pages/Map";
+import DisplayPaginatedData from "./pages/DisplayPaginatedData";
 
 
 const token = localStorage.getItem("token");
@@ -48,6 +49,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/map" element={<Map />} />
+          <Route path="/artists/:page?" element={<DisplayPaginatedData dataType={'artistes'} />} />
+          <Route path="/events/:page?" element={<DisplayPaginatedData dataType={'événements'} />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

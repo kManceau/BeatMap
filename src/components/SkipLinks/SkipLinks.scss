@@ -1,0 +1,12 @@
+.skiplinks-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 1rem;
+  background-color: #fff;
+  transform: translateY(-100%);
+}
+.skiplinks-container:focus-within {
+  transform: translateY(0);
+}

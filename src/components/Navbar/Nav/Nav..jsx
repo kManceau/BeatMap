@@ -29,7 +29,7 @@ const Nav = ({navLinks, profilLinks, user}) => {
                         {user ? <Avatar src={user.avatar}/> : <AccountCircleIcon/>}
                     </ListItemIcon>
                 </ListItem>
-                <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose} className="profile-menu">
+                <Menu anchorEl={anchorEl} open={anchorEl} onClose={handleClose} className="profile-menu">
                     {profilLinks.map((link, index) => (
                         <MenuItem key={index}>
                             <Button href={link['1']}>

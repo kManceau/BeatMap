@@ -29,7 +29,7 @@ const HomeContent = ({type}) => {
     }, [type])
 
     return (
-        <Box className="home-content-background">
+        <Box className="home-content-background" id={type}>
             <Container maxWidth="xl" className="home-content-container">
                 <Box className="soon-show-container">
                     <Typography component="h2" variant="h4" className="home-content-title">

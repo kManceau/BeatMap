@@ -4,6 +4,7 @@ import Hero from "../components/Hero/Hero";
 import HomeContent from "../components/HomeContent/HomeContent";
 import HomePicture from "../components/HomePicture/HomePicture";
 import Footer from "../components/Footer/Footer";
+import SkipLinks from "../components/SkipLinks/SkipLinks";
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
 
     return (
         <>
+            <SkipLinks links={[['Aller aux prochains événements', '#events'], ['Aller aux artistes populaires', '#artists'], ['Aller en bas de page', '#footer']]}/>
             <Navbar/>
             <Hero/>
             <HomeContent type="events"/>
