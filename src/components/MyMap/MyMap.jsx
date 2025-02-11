@@ -1,5 +1,5 @@
 import "./MyMap.scss";
-import {MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
+import {MapContainer, TileLayer, Marker} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
 import markerIcon from "leaflet/dist/images/marker-icon.png";
@@ -10,8 +10,6 @@ import MyPopup from "./MyPopup/MyPopup";
 
 const MyMap = ({latitude, longitude}) => {
     const [events, setEvents] = useState([]);
-    let startDate = "";
-    let endDate = "";
 
     const getEvents = async () => {
         const events = await apiGetAllEvents();
@@ -28,7 +26,7 @@ const MyMap = ({latitude, longitude}) => {
 
     useEffect(() => {
         getEvents();
-    })
+    }, [])
 
     return(
         <MapContainer center={[latitude, longitude]} zoom={15}

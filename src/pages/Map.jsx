@@ -4,11 +4,12 @@ import {Box, CircularProgress, Container, Typography} from "@mui/material";
 import Footer from "../components/Footer/Footer";
 import {apiGetCityName} from "../services/ApiService";
 import MyMap from "../components/MyMap/MyMap";
+import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
 
 const Map = () => {
     const [loader, setLoader] = useState(true);
     const [pageLoaded, setPageLoaded] = useState(false);
-    const [location, setLocation] = useState({latitude: 45.58107657097368, longitude: 1.546566544948553});
+    const [location, setLocation] = useState({});
     const [city, setCity] = useState('La Porcherie');
     const [dep, setDep] = useState('89');
 
@@ -16,8 +17,12 @@ const Map = () => {
 
     const getCity = async (latitude, longitude) => {
         const city = await apiGetCityName(latitude, longitude);
-        setCity(city.features[0].properties.city);
-        setDep(city.features[0].properties.postcode.substring(0, 2));
+        if(city.address.village){
+            setCity(city.address.village);
+        } else{
+            setCity(city.address.city);
+        }
+        setDep(city.address.postcode.substring(0, 2));
     }
 
     const getLocation = async () => {
@@ -28,10 +33,10 @@ const Map = () => {
                     navigator.geolocation.getCurrentPosition(resolve, reject, {maximumAge : 60000});
                 });
             } catch {
-                position = {coords: {latitude: 45.58107657097368, longitude: 1.546566544948553}}
+                position = {coords: {latitude: 47.69625008673613, longitude: -1.64534100035814}}
             }
         } else {
-            position = {coords: {latitude: 45.58107657097368, longitude: 1.546566544948553}}
+            position = {coords: {latitude: 47.69625008673613, longitude: -1.64534100035814}}
         }
         setTimeout(() => {
             setLoader(false);
@@ -50,6 +55,7 @@ const Map = () => {
     return (
         <>
             <Navbar/>
+            <Breadcrumb links={[['Accueil', '/'], ['Carte', '/map']]}/>
             {
                 loader ? (
                     <Box sx={{width:'100%', minHeight:'calc(100vh - 4rem)', display:'flex', justifyContent:'center', alignItems: 'center'}}>

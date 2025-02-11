@@ -24,7 +24,7 @@ const Hero = () => {
                     <br />
                         Que vous soyez amateur de rock, d’électro, de jazz ou de musique classique, BeatMap est votre compagnon idéal pour planifier vos sorties musicales et découvrir de nouveaux artistes. Explorez, vibrez et laissez la musique vous guider !
                     </Typography>
-                    <Button variant="contained" href="#explore" size="large">
+                    <Button variant="contained" href="/map" size="large">
                         Parcourir notre carte
                     </Button>
                 </Box>

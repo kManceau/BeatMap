@@ -11,7 +11,7 @@ export const apiGetPopularArtists = async (limit) => {
 }
 
 export const apiGetCityName = async (latitude, longitude) => {
-    return await axios.get("https://api-adresse.data.gouv.fr/reverse/?lat=" + latitude + "" + "&lon=" + longitude).then((response) => response.data);
+    return await axios.get("https://nominatim.openstreetmap.org/reverse?lat=" + latitude + "&lon=" + longitude + "&format=json").then((response) => response.data);
 }
 
 export const apiGetAllEvents = async () => {

@@ -1,7 +1,6 @@
 import './MyPopup.scss';
 import React from "react";
 import {Popup} from "react-leaflet";
-import {Button, Card, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
 import EventCard from "../../HomeContent/EventCard/EventCard";
 
 const MyPopup = ({event}) => {

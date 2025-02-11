@@ -10,21 +10,23 @@ const HomeContent = ({type}) => {
     const [artists, setArtists] = useState([]);
     const [loader, setLoader] = useState(true);
 
-    const getData = async () => {
-        if (type === "events") {
-            const eventsList = await apiGetSoonEvents(6);
-            setEvents(eventsList);
-        } else if (type === "artists") {
-            const artistsList = await apiGetPopularArtists(6);
-            setArtists(artistsList);
-        }
-    }
+
 
     useEffect(() => {
+        const getData = async () => {
+            if (type === "events") {
+                const eventsList = await apiGetSoonEvents(6);
+                setEvents(eventsList);
+            } else if (type === "artists") {
+                const artistsList = await apiGetPopularArtists(6);
+                setArtists(artistsList);
+            }
+        }
+
         getData().then(() => {
             setLoader(false);
         });
-    }, [])
+    }, [type])
 
     return (
         <Box className="home-content-background">
