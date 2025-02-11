@@ -32,7 +32,7 @@ const MyMap = ({latitude, longitude}) => {
 
     return(
         <MapContainer center={[latitude, longitude]} zoom={15}
-                      style={{ height: "800px", width: "100%", borderRadius: "1rem", boxShadow: "5px 5px 10px 0px rgba(0,0,0,.5)",}}>
+                      style={{ height: "800px", maxHeight: "75vh", width: "100%", borderRadius: "1rem", boxShadow: "5px 5px 10px 0px rgba(0,0,0,.5)",}}>
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
