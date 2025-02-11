@@ -3,18 +3,16 @@ import {useEffect, useState} from "react";
 import {Box, CircularProgress, Container, Typography} from "@mui/material";
 import Footer from "../components/Footer/Footer";
 import {apiGetCityName} from "../services/ApiService";
+import MyMap from "../components/MyMap/MyMap";
 
 const Map = () => {
     const [loader, setLoader] = useState(true);
+    const [pageLoaded, setPageLoaded] = useState(false);
     const [location, setLocation] = useState({latitude: 45.58107657097368, longitude: 1.546566544948553});
     const [city, setCity] = useState('La Porcherie');
     const [dep, setDep] = useState('89');
 
-    const loading = async () => {
-        setTimeout(() => {
-            setLoader(false);
-        }, 1000);
-    }
+
 
     const getCity = async (latitude, longitude) => {
         const city = await apiGetCityName(latitude, longitude);
@@ -23,19 +21,29 @@ const Map = () => {
     }
 
     const getLocation = async () => {
-        console.log('waiting...');
-        const position = await new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(resolve, reject);
-        });
-
+        let position;
+        if(navigator.geolocation) {
+            try{
+                position = await new Promise((resolve, reject) => {
+                    navigator.geolocation.getCurrentPosition(resolve, reject, {maximumAge : 60000});
+                });
+            } catch {
+                position = {coords: {latitude: 45.58107657097368, longitude: 1.546566544948553}}
+            }
+        } else {
+            position = {coords: {latitude: 45.58107657097368, longitude: 1.546566544948553}}
+        }
+        setTimeout(() => {
+            setLoader(false);
+        }, 1000)
         setLocation({latitude: position.coords.latitude, longitude: position.coords.longitude});
-        getCity(position.coords.latitude, position.coords.longitude);
+        await getCity(position.coords.latitude, position.coords.longitude);
+        setPageLoaded(true);
     }
 
 
     useEffect(() => {
         document.title = 'BeatMap - Carte des événements';
-        loading();
         getLocation();
     }, []);
 
@@ -60,10 +68,17 @@ const Map = () => {
                                 {location.latitude}, {location.longitude}
                             </Typography>
                         </Container>
-                        <Footer />
+                        {
+                            pageLoaded ? (
+                            <Container maxWidth="xl" sx={{paddingBlock: "2rem"}}>
+                                <MyMap latitude={location.latitude} longitude={location.longitude}/>
+                            </Container>
+                        ) : null
+                        }
                     </>
                 )
             }
+            <Footer />
         </>
     );
 }

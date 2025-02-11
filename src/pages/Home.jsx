@@ -23,22 +23,14 @@ const Home = () => {
     return (
         <>
             <Navbar/>
-            {
-                loader ? (
-                    <Box sx={{width:'100%', minHeight:'calc(100vh - 4rem)', display:'flex', justifyContent:'center', alignItems: 'center'}}>
-                        <CircularProgress />
-                    </Box>
-                ) : (
-                    <>
-                        <Hero/>
-                        <HomeContent type="events"/>
-                        <HomePicture number="1" />
-                        <HomeContent type="artists"/>
-                        <HomePicture number="2" />
-                        <Footer />
-                    </>
-                )
-            }
+            <Hero/>
+            <HomeContent type="events"/>
+            <HomePicture number="1"/>
+            <HomeContent type="artists"/>
+            <HomePicture number="2"/>
+            <Footer/>
+
+
         </>
     );
 }

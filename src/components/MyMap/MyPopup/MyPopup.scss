@@ -1,0 +1,19 @@
+.leaflet-popup-content{
+  margin: 0;
+  width: 345px !important;
+  max-width: 75vw !important;
+}
+.leaflet-popup-content p {
+  margin: 0 !important;
+}
+.leaflet-popup-content-wrapper{
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.leaflet-container a.leaflet-popup-close-button{
+  color: #F9A602;
+  width: 48px;
+  height: 48px;
+  font: 32px/48px Tahoma, Verdana, sans-serif;
+}
