@@ -1,0 +1,23 @@
+.artist-container{
+  text-align: center;
+}
+.artist-photo{
+  margin-block: 2rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,.5);
+  max-height: 400px;
+  max-width: 100%;
+  object-fit: cover;
+}
+.events-cards-container{
+  display: flex;
+  gap: 2rem;
+  overflow-x: scroll;
+  margin-block-end: 2rem;
+}
+
+@media screen and (min-width: 900px){
+  .artist-container{
+    text-align: start;
+  }
+}

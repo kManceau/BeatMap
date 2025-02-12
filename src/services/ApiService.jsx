@@ -25,3 +25,11 @@ export const apiGetArtistsPaginated = async (page) => {
 export const apiGetEventsPaginated = async (page) => {
     return await axios.get(API_BASE_URL + "events/paginated?page=" + page).then((response) => response.data);
 }
+
+export const apiGetArtistEventsPlaces = async (id) => {
+    return await axios.get(API_BASE_URL + "artist/events/" + id).then((response) => response.data);
+}
+
+export const apiGetEventArtistsStyle = async (id) => {
+    return await axios.get(API_BASE_URL + "event/artists/" + id).then((response) => response.data);
+}

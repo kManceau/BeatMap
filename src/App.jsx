@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import {createContext} from "react";
 import Map from "./pages/Map";
 import DisplayPaginatedData from "./pages/DisplayPaginatedData";
+import Artist from "./pages/Artist";
+import Event from "./pages/Event";
 
 
 const token = localStorage.getItem("token");
@@ -51,6 +53,8 @@ function App() {
           <Route path="/map" element={<Map />} />
           <Route path="/artists/:page?" element={<DisplayPaginatedData dataType={'artistes'} />} />
           <Route path="/events/:page?" element={<DisplayPaginatedData dataType={'événements'} />} />
+          <Route path="/artist/:id" element={<Artist />} />
+          <Route path="/event/:id" element={<Event />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
