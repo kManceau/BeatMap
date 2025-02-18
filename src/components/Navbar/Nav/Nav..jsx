@@ -1,11 +1,14 @@
 import "./Nav.scss";
 import {Avatar, Box, Button, List, ListItem, ListItemIcon, Menu, MenuItem} from "@mui/material";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import {AuthContext} from "../../../contexts/AuthContext";
+import {imagesBaseUrl} from "../../../App";
 
 const Nav = ({navLinks, profilLinks, user}) => {
     const [anchorEl, setAnchorEl] = useState(null);
-
+    const {auth} = useContext(AuthContext);
+    const ImagesBaseUrl = useContext(imagesBaseUrl) + 'user/';
     const handleProfileClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -26,7 +29,7 @@ const Nav = ({navLinks, profilLinks, user}) => {
                 ))}
                 <ListItem button onClick={handleProfileClick} className="profile-icon-container">
                     <ListItemIcon className="profile-icon">
-                        {user ? <Avatar src={user.avatar}/> : <AccountCircleIcon/>}
+                        {auth.user ? <Avatar src={ImagesBaseUrl + auth.user.photo + '.jpg'}/> : <AccountCircleIcon/>}
                     </ListItemIcon>
                 </ListItem>
                 <Menu anchorEl={anchorEl} open={anchorEl} onClose={handleClose} className="profile-menu">

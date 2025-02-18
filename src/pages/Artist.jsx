@@ -11,9 +11,11 @@ import {imagesBaseUrl} from "../App";
 import defaultAvif from "src/assets/images/artist-default.avif";
 import defaultWebp from "src/assets/images/artist-default.webp";
 import defaultJpg from "src/assets/images/artist-default.jpg";
-import EventCard from "../components/HomeContent/EventCard/EventCard";
+import EventCard from "../components/EventCard/EventCard";
+import {AuthContext} from "../contexts/AuthContext";
 
 const Artist = () => {
+    const {auth} = useContext(AuthContext);
     const {id} = useParams();
     const [loader, setLoader] = useState(true);
     const ImagesBaseUrl = useContext(imagesBaseUrl) + 'artist/';
@@ -82,6 +84,12 @@ const Artist = () => {
                                     ))}
                                 </Container>
                             )}
+                            {auth && auth.user && (auth.user.role === "admin")   && (
+                                    <Box>
+                                        <Button href={`/delete/artist/${artist.id}`} sx={{color: "red"}}>Supprimer {artist.name}</Button>
+                                    </Box>
+                                )
+                            }
                             <Button href="/artists">Retour à la liste des artistes</Button>
                         </Container>
                         <Footer/>

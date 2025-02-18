@@ -33,3 +33,34 @@ export const apiGetArtistEventsPlaces = async (id) => {
 export const apiGetEventArtistsStyle = async (id) => {
     return await axios.get(API_BASE_URL + "event/artists/" + id).then((response) => response.data);
 }
+
+export const apiLogin = async (formData) => {
+    return await axios.post(API_BASE_URL + "login", formData, {headers : {"Content-Type": "multipart/form-data"}}).then((response) => response.data);
+}
+
+export const apiRegister = async (formData) => {
+    return await axios.post(API_BASE_URL + "register", formData, {headers : {"Content-Type": "multipart/form-data"}}).then((response) => response.data);
+}
+export const apiGetCurrentUser = async (token) => {
+    return await axios.get(API_BASE_URL + "currentuser",
+        {headers : {"Content-Type": "multipart/form-data", Authorization: `Bearer ${token}`}})
+        .then((response) => response.data);
+}
+
+export const apiLogout = async (token) => {
+    return await axios.post(API_BASE_URL + "logout", {},
+        {headers: {"Content-Type": "multipart/form-data", Authorization: `Bearer ${token}`}
+        }).then((response) => response.data);
+}
+
+export const apiDeleteArtist = async (id, token) => {
+    return await axios.delete(API_BASE_URL + "artist/" + id,
+        {headers: {"Content-Type": "multipart/form-data", Authorization: `Bearer ${token}`}
+        }).then((response) => response.data);
+}
+
+export const apiDeleteEvent = async (id, token) => {
+    return await axios.delete(API_BASE_URL + "event/" + id,
+        {headers: {"Content-Type": "multipart/form-data", Authorization: `Bearer ${token}`}
+        }).then((response) => response.data);
+}

@@ -1,17 +1,13 @@
 import Navbar from '../components/Navbar/Navbar';
-import {useEffect} from "react";
 import Hero from "../components/Hero/Hero";
 import HomeContent from "../components/HomeContent/HomeContent";
 import HomePicture from "../components/HomePicture/HomePicture";
 import Footer from "../components/Footer/Footer";
 import SkipLinks from "../components/SkipLinks/SkipLinks";
 
+
 const Home = () => {
-
-    useEffect(() => {
-        document.title = 'BeatMap - Accueil';
-    }, []);
-
+    document.title = 'BeatMap - Accueil';
 
     return (
         <>

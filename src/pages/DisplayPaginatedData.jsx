@@ -7,8 +7,8 @@ import {useLocation, useParams} from "react-router";
 import {apiGetArtistsPaginated, apiGetEventsPaginated} from "../services/ApiService";
 import ListPagination from "../components/ListPagination/ListPagination";
 import {Box, Container, Typography} from "@mui/material";
-import ArtistCard from "../components/HomeContent/ArtistCard/ArtistCard";
-import EventCard from "../components/HomeContent/EventCard/EventCard";
+import ArtistCard from "../components/ArtistCard/ArtistCard";
+import EventCard from "../components/EventCard/EventCard";
 import Footer from "../components/Footer/Footer";
 
 

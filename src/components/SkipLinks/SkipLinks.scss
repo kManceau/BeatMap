@@ -7,6 +7,10 @@
   background-color: #fff;
   transform: translateY(-100%);
 }
+.skiplinks-container > a{
+  color: black;
+  text-decoration-color: black;
+}
 .skiplinks-container:focus-within {
   transform: translateY(0);
 }

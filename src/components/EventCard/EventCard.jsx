@@ -1,7 +1,7 @@
 import "./EventCard.scss";
 import {Button, Card, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
 import {useContext} from "react";
-import {imagesBaseUrl} from "../../../App";
+import {imagesBaseUrl} from "../../App";
 import defaultAvif from "src/assets/images/event-default.avif";
 import defaultWebp from "src/assets/images/event-default.webp";
 import defaultJpg from "src/assets/images/event-default.jpg";

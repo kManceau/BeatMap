@@ -1,7 +1,7 @@
 import "./ArtistCard.scss";
 import {Button, Card, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
-import {useContext, useState} from "react";
-import {imagesBaseUrl} from "../../../App";
+import {useContext} from "react";
+import {imagesBaseUrl} from "../../App";
 import defaultAvif from "src/assets/images/artist-default.avif";
 import defaultWebp from "src/assets/images/artist-default.webp";
 import defaultJpg from "src/assets/images/artist-default.jpg";

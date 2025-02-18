@@ -6,14 +6,16 @@ import {Box, Button, CircularProgress, Container, Typography} from "@mui/materia
 import Footer from "../components/Footer/Footer";
 import {useParams} from "react-router";
 import {useContext, useEffect, useState} from "react";
-import {apiGetEventArtistsStyle, apiGetOneEvent} from "../services/ApiService";
+import {apiGetEventArtistsStyle} from "../services/ApiService";
 import {imagesBaseUrl} from "../App";
 import defaultAvif from "src/assets/images/event-default.avif";
 import defaultWebp from "src/assets/images/event-default.webp";
 import defaultJpg from "src/assets/images/event-default.jpg";
-import ArtistCard from "../components/HomeContent/ArtistCard/ArtistCard";
+import ArtistCard from "../components/ArtistCard/ArtistCard";
+import {AuthContext} from "../contexts/AuthContext";
 
 const Event = () => {
+    const {auth} = useContext(AuthContext);
     const {id} = useParams();
     const [loader, setLoader] = useState(true);
     const ImagesBaseUrl = useContext(imagesBaseUrl) + 'event/';
@@ -86,6 +88,12 @@ const Event = () => {
                                     ))}
                                 </Container>
                             )}
+                            {auth && auth.user && (auth.user.role === "admin")   && (
+                                <Box>
+                                    <Button href={`/delete/event/${event.id}`} sx={{color: "red"}}>Supprimer {event.name}</Button>
+                                </Box>
+                            )
+                            }
                             <Button href="/events">Retour à la liste des événements</Button>
                         </Container>
                         <Footer/>

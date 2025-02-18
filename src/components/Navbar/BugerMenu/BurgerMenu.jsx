@@ -1,5 +1,5 @@
 import "./BurgerMenu.scss";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {
     Drawer,
     List,
@@ -14,10 +14,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import {AuthContext} from "../../../contexts/AuthContext";
+import {imagesBaseUrl} from "../../../App";
 
 const BurgerMenu = ({navLinks, profilLinks, user}) => {
     const [open, setOpen] = useState(+false);
     const [search, setSearch] = useState("");
+    const {auth} = useContext(AuthContext);
+    const ImagesBaseUrl = useContext(imagesBaseUrl) + 'user/';
 
     const toggleDrawer = (state) => () => {
         setOpen(state);
@@ -39,7 +43,7 @@ const BurgerMenu = ({navLinks, profilLinks, user}) => {
                     <ListItem>
                         <Button href={"/profile"}>
                             <ListItemIcon>
-                                {user ? <Avatar src={user.avatar}/> : <AccountCircleIcon sx={{color: "primary.main"}}/>}
+                                {auth.user ? <Avatar src={ImagesBaseUrl + auth.user.photo + '.jpg'}/> : <AccountCircleIcon/>}
                             </ListItemIcon>
                         </Button>
                     </ListItem>

@@ -1,15 +1,20 @@
 import "./Footer.scss";
 import {Box, Button, Container, List, ListItem, Typography} from "@mui/material";
 import React, {useContext} from "react";
-import {NavLinks, ProfilLinks} from "../../App";
+import {NavLinks} from "../../App";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PublicIcon from '@mui/icons-material/Public';
+import {AuthContext} from "../../contexts/AuthContext";
 
 const Footer = () => {
+    const {auth} = useContext(AuthContext);
     const navLinks = useContext(NavLinks);
-    const profilLinks = useContext(ProfilLinks);
+    let profilLinks = [['Se connecter', '/login'], ['S\'inscrire', '/register']];
+    if(auth.user) {
+        profilLinks = [['Mon compte', '/profile'], ['Déconnexion', '/logout']];
+    }
 
     return (
         <Box sx={{backgroundColor: "#333333", paddingBlock: "2rem"}} id="footer">

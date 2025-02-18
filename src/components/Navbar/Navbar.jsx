@@ -5,11 +5,16 @@ import LogoTitle from "./LogoTitle/LogoTitle";
 import BurgerMenu from "./BugerMenu/BurgerMenu";
 import Nav from "./Nav/Nav.";
 import {useContext} from "react";
-import {NavLinks, ProfilLinks} from "../../App";
+import {NavLinks} from "../../App";
+import {AuthContext} from "../../contexts/AuthContext";
 
 export default function AppBaNComponent() {
+    const {auth} = useContext(AuthContext);
     const navLinks = useContext(NavLinks);
-    const profilLinks = useContext(ProfilLinks);
+    let profilLinks = [['Se connecter', '/login'], ['S\'inscrire', '/register']];
+    if(auth.user) {
+        profilLinks = [['Mon compte', '/profile'], ['Déconnexion', '/logout']];
+    }
 
     return (
         <>

@@ -1,9 +1,9 @@
 import "./HomeContent.scss";
 import {Box, CircularProgress, Container, Typography} from "@mui/material";
-import EventCard from "./EventCard/EventCard";
+import EventCard from "../EventCard/EventCard";
 import {useEffect, useState} from "react";
 import {apiGetPopularArtists, apiGetSoonEvents} from "../../services/ApiService";
-import ArtistCard from "./ArtistCard/ArtistCard";
+import ArtistCard from "../ArtistCard/ArtistCard";
 
 const HomeContent = ({type}) => {
     const [events, setEvents] = useState([]);

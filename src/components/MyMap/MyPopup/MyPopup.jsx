@@ -1,7 +1,7 @@
 import './MyPopup.scss';
 import React from "react";
 import {Popup} from "react-leaflet";
-import EventCard from "../../HomeContent/EventCard/EventCard";
+import EventCard from "../../EventCard/EventCard";
 
 const MyPopup = ({event}) => {
 

@@ -29,7 +29,7 @@ const MyMap = ({latitude, longitude}) => {
     }, [])
 
     return(
-        <MapContainer center={[latitude, longitude]} zoom={10}
+        <MapContainer center={[latitude, longitude]} zoom={12}
                       style={{ height: "800px", maxHeight: "75vh", width: "100%", borderRadius: "1rem", boxShadow: "5px 5px 10px 0px rgba(0,0,0,.5)",}}
                         id="map" >
             <TileLayer
